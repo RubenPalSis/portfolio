@@ -94,6 +94,51 @@
   margin: 12px auto;  /* centra cada párrafo horizontalmente */
 }
 
+
+
+.award-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  align-items: center;
+}
+
+.award-image img {
+  max-width: 200px;
+  border-radius: 1rem;
+}
+
+.award-info {
+  flex: 1;
+}
+
+.award-info h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.award-info p {
+  margin-bottom: 1rem;
+}
+
+.award-info .btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #0072b1; /* color LinkedIn */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: background 0.3s;
+}
+
+.award-info .btn:hover {
+  background-color: #005582;
+}
+
     /* ===== SECCIONES ===== */
     .section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
     .section h3 { font-size: 22px; margin-bottom: 18px; text-align: center; }
@@ -114,13 +159,57 @@
       box-shadow: 0 10px 24px rgba(0,0,0,0.08);
     }
 
-    /* ===== HABILIDADES ===== */
     .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 20px;
-    }
-    .skills-grid h4 { margin-bottom: 8px; color: var(--text); }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.skill-card {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card h4 {
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-size: 1.3rem;
+}
+
+.skill-card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.skill-card ul li {
+  margin-bottom: 0.6rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.skill-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #007acc; /* color distintivo para bullets */
+}
+
+.skill-card.technical ul li::before {
+  color: #1f8ef1;
+}
+
+.skill-card.soft ul li::before {
+  color: #f39c12;
+}
+
 
     /* ===== PROYECTOS ===== */
     .projects-grid {
@@ -151,6 +240,84 @@
     }
     .project-info h4 { margin-bottom: 6px; }
     .project-info p { margin-bottom: 12px; color: var(--muted); }
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.experience-card {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.exp-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.studies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.8rem;
+}
+
+.study-card {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.study-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.study-card h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.study-card .period {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.exp-header h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.period {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.3rem;
+}
+
+.experience-card ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.experience-card ul li {
+  margin-bottom: 0.5rem;
+}
+
 
     /* ===== CONTACTO ===== */
     .footer {
