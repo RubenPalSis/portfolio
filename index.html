@@ -40,6 +40,10 @@
         <a href="#proyectos" class="btn">Ver proyectos</a>
         <a href="CV_Ruben_Palacio.pdf" class="btn-outline" download>Descargar CV</a>
       </div>
+      <div class="scroll-indicator">
+        <span>Desplázate para descubrir</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
     </div>
   </section>
 
@@ -114,14 +118,23 @@
     <h3>Formación & Logros</h3>
     <div class="studies-grid">
       <div class="study-card">
+        <div class="study-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
         <h4>Grado Superior — Desarrollo de Aplicaciones Multiplataforma</h4>
         <span class="period">La Salle Santo Ángel, Zaragoza <br>(2023 – 2025)</span>
       </div>
       <div class="study-card">
+        <div class="study-icon">
+          <i class="fas fa-network-wired"></i>
+        </div>
         <h4>Grado Medio — Sistemas Microinformáticos y Redes</h4>
         <span class="period">Salesianos Ntra. Sra. del Pilar <br>(2021 – 2023)</span>
       </div>
       <div class="study-card">
+        <div class="study-icon">
+          <i class="fas fa-print"></i>
+        </div>
         <h4>Curso de Iniciacion a la impresion 3D</h4>
         <span class="period">Salesianos – INAEM <br>(2023)</span>
       </div>
@@ -146,26 +159,79 @@
   <!-- ===== HABILIDADES ===== -->
   <section id="habilidades" class="section alt container">
     <h3>Habilidades</h3>
-    <div class="skills-grid">
-      <div class="skill-card technical">
-        <h4>Técnicas</h4>
-        <ul>
-          <li><b>Lenguajes:</b> Java, C#, SQL</li>
-          <li><b>Bases de datos:</b> MySQL, SQL Server, NoSQL</li>
-          <li><b>Web:</b> HTML, CSS, JavaScript, Node.js</li>
-          <li><b>Otros:</b> Excel avanzado, Git, entornos ágiles</li>
-        </ul>
-      </div>
-      <div class="skill-card soft">
-        <h4>Soft Skills</h4>
-        <ul>
-          <li>Comunicación, trabajo en equipo y liderazgo</li>
-          <li>Resolución de problemas y pensamiento analítico</li>
-          <li>Aprendizaje rápido y adaptabilidad</li>
-          <li>Organización y planificación</li>
-        </div>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h4><i class="fas fa-code"></i> Técnicas</h4>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <span class="skill-name">Java</span>
+            <div class="skill-bar">
+              <div class="skill-progress" data-level="85"></div>
+            </div>
           </div>
-        </section>
+          <div class="skill-item">
+            <span class="skill-name">HTML/CSS</span>
+            <div class="skill-bar">
+              <div class="skill-progress" data-level="90"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">JavaScript</span>
+            <div class="skill-bar">
+              <div class="skill-progress" data-level="80"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">SQL</span>
+            <div class="skill-bar">
+              <div class="skill-progress" data-level="75"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Node.js</span>
+            <div class="skill-bar">
+              <div class="skill-progress" data-level="70"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Git</span>
+            <div class="skill-bar">
+              <div class="skill-progress" data-level="80"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4><i class="fas fa-users"></i> Soft Skills</h4>
+        <div class="soft-skills-grid">
+          <div class="soft-skill-item">
+            <i class="fas fa-comments"></i>
+            <span>Comunicación</span>
+          </div>
+          <div class="soft-skill-item">
+            <i class="fas fa-people-group"></i>
+            <span>Trabajo en equipo</span>
+          </div>
+          <div class="soft-skill-item">
+            <i class="fas fa-lightbulb"></i>
+            <span>Resolución de problemas</span>
+          </div>
+          <div class="soft-skill-item">
+            <i class="fas fa-brain"></i>
+            <span>Pensamiento analítico</span>
+          </div>
+          <div class="soft-skill-item">
+            <i class="fas fa-bolt"></i>
+            <span>Aprendizaje rápido</span>
+          </div>
+          <div class="soft-skill-item">
+            <i class="fas fa-calendar-check"></i>
+            <span>Organización</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ===== PROYECTOS ===== -->
   <section id="proyectos" class="section container">
@@ -240,23 +306,23 @@
     </div>
   </section>
 
-  <!-- Lightbox Modal -->
-  <div id="lightbox-modal" class="lightbox-modal">
-    <span class="close">&times;</span>
-    <button class="lightbox-btn prev-lightbox-btn">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    <img class="modal-content" id="lightbox-img">
-    <button class="lightbox-btn next-lightbox-btn">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-  </div>
-
   <!-- ===== CONTACTO ===== -->
   <section id="contacto" class="section footer container">
     <h3>Contacto</h3>
-    <p>📧 <a href="mailto:rubenpalsis11@gmail.com">rubenpalsis11@gmail.com</a></p>
-    <p>🌐 <a href="https://linkedin.com/in/ruben-palacio-sisamon-4bb30425a" target="_blank">LinkedIn</a> | <a href="https://github.com/RubenPalSis" target="_blank">GitHub</a></p>
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:rubenpalsis11@gmail.com">rubenpalsis11@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-linkedin"></i>
+        <a href="https://linkedin.com/in/ruben-palacio-sisamon-4bb30425a" target="_blank">LinkedIn</a>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/RubenPalSis" target="_blank">GitHub</a>
+      </div>
+    </div>
     <p class="footer-copy">© <span id="year"></span> Rubén Palacio Sisamon</p>
   </section>
 
@@ -274,6 +340,4 @@
 
   <script src="script.js"></script>
 </body>
-
 </html>
-
