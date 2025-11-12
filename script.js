@@ -30,29 +30,9 @@ function initDarkMode() {
   });
 }
 
-// Animate skill bars on scroll
-function initSkillBars() {
-  const skillBars = document.querySelectorAll('.skill-progress');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const skillBar = entry.target;
-        const level = skillBar.getAttribute('data-level');
-        skillBar.style.width = `${level}%`;
-        observer.unobserve(skillBar);
-      }
-    });
-  }, { threshold: 0.5 });
-  
-  skillBars.forEach(bar => {
-    observer.observe(bar);
-  });
-}
-
 // Add scroll animations
 function initScrollAnimations() {
-  const animatedElements = document.querySelectorAll('.experience-card, .study-card, .skill-category, .award-card');
+  const animatedElements = document.querySelectorAll('.experience-card, .study-card, .skill-card, .award-card');
   
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -76,9 +56,6 @@ function initScrollAnimations() {
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize Dark Mode
   initDarkMode();
-  
-  // Initialize skill bars
-  initSkillBars();
   
   // Initialize scroll animations
   initScrollAnimations();
@@ -294,72 +271,4 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-
-  // Efecto de partículas para el fondo (opcional)
-  initParticles();
 });
-
-// Efecto de partículas para el fondo (opcional)
-function initParticles() {
-  const canvas = document.createElement('canvas');
-  canvas.id = 'particles-canvas';
-  canvas.style.position = 'fixed';
-  canvas.style.top = '0';
-  canvas.style.left = '0';
-  canvas.style.width = '100%';
-  canvas.style.height = '100%';
-  canvas.style.pointerEvents = 'none';
-  canvas.style.zIndex = '-1';
-  document.body.appendChild(canvas);
-
-  const ctx = canvas.getContext('2d');
-  let particles = [];
-  const particleCount = 50;
-
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-
-  function createParticles() {
-    particles = [];
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 2 + 1,
-        speedX: Math.random() * 0.5 - 0.25,
-        speedY: Math.random() * 0.5 - 0.25,
-        color: `rgba(${Math.floor(Math.random() * 100 + 155)}, ${Math.floor(Math.random() * 100 + 155)}, ${Math.floor(Math.random() * 100 + 155)}, ${Math.random() * 0.5 + 0.1})`
-      });
-    }
-  }
-
-  function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    particles.forEach(particle => {
-      particle.x += particle.speedX;
-      particle.y += particle.speedY;
-      
-      if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
-      if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
-      
-      ctx.beginPath();
-      ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-      ctx.fillStyle = particle.color;
-      ctx.fill();
-    });
-    
-    requestAnimationFrame(animateParticles);
-  }
-
-  resizeCanvas();
-  createParticles();
-  animateParticles();
-
-  window.addEventListener('resize', () => {
-    resizeCanvas();
-    createParticles();
-  });
-}
