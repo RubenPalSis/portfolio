@@ -640,7 +640,7 @@ body {
 /* ===== PROYECTOS ===== */
 .projects-carousel {
   position: relative;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -1103,6 +1103,7 @@ body {
     font-size: 1rem;
   }
 }
+
 
 
 
