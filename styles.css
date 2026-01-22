@@ -437,108 +437,80 @@ body {
   color: var(--primary);
 }
 
-/* ===== ESTUDIOS (SOLUCIÓN MÁS EFECTIVA) ===== */
+var(--secondary);
+
+/* ===== ESTUDIOS ===== */
+
 .studies-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
+  justify-content: center;
 }
 
-/* Crear un contenedor especial para los dos últimos */
-.studies-grid-wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
+/* Card */
 .study-card {
   background: var(--card-bg);
-  border-radius: 0.75rem;
-  padding: 2rem;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
+  border-radius: 1rem;
+  padding: 2.2rem 2rem;
   text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform .3s ease, box-shadow .3s ease;
   border-top: 4px solid;
   border-image: var(--gradient) 1;
   position: relative;
   overflow: hidden;
+  max-width: 340px;
+  margin: 0 auto;
 }
 
-/* Los primeros 3 ocupan toda la fila */
-.study-card:nth-child(-n+3) {
-  grid-column: span 1;
-}
-
-/* Los últimos 2 van en la segunda fila, ocupando las columnas 2 y 3 */
-.study-card:nth-child(4) {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.study-card:nth-child(5) {
-  grid-column: 3;
-  grid-row: 2;
-}
-
-/* Para pantallas medianas */
-@media (max-width: 1024px) {
-  .studies-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .study-card:nth-child(n) {
-    grid-column: auto;
-    grid-row: auto;
-  }
-}
-
-/* Para pantallas pequeñas */
-@media (max-width: 768px) {
-  .studies-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Resto de estilos igual */
+/* Hover sutil */
 .study-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
-  transition: left 0.7s;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.06),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform .8s ease;
 }
 
 .study-card:hover::before {
-  left: 100%;
+  transform: translateX(100%);
 }
 
 .study-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
 }
 
+/* Icono */
 .study-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2.6rem;
+  margin-bottom: 1.2rem;
   color: var(--primary);
 }
 
+/* Texto */
 .study-card h4 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
+  margin-bottom: .6rem;
   color: var(--text-color);
-  margin-bottom: 1rem;
 }
 
 .study-card .period {
+  font-size: .95rem;
   color: var(--secondary);
 }
+
+
+
 /* ===== HABILIDADES ===== */
 .skills-grid {
   display: grid;
@@ -1162,5 +1134,6 @@ body {
     font-size: 0.8rem;
   }
 }
+
 
 
