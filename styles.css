@@ -437,7 +437,7 @@ body {
   color: var(--primary);
 }
 
-/* ===== ESTUDIOS ===== */
+/* ===== ESTUDIOS (SOLUCIÓN MÁS EFECTIVA) ===== */
 .studies-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -446,40 +446,13 @@ body {
   margin: 0 auto;
 }
 
-/* Los dos últimos elementos (4º y 5º) se posicionan en la segunda fila CENTRADOS */
-.studies-grid .study-card:nth-child(4) {
-  grid-column: 1;
-  grid-row: 2;
-  margin-left: auto;
-  margin-right: 1rem;
-}
-
-.studies-grid .study-card:nth-child(5) {
-  grid-column: 2;
-  grid-row: 2;
-  margin-right: auto;
-}
-
-/* Para pantallas medianas (tablets) */
-@media (max-width: 1024px) {
-  .studies-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .studies-grid .study-card:nth-child(4),
-  .studies-grid .study-card:nth-child(5) {
-    grid-column: auto;
-    grid-row: auto;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-/* Para pantallas pequeñas (móviles) */
-@media (max-width: 768px) {
-  .studies-grid {
-    grid-template-columns: 1fr;
-  }
+/* Crear un contenedor especial para los dos últimos */
+.studies-grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .study-card {
@@ -495,6 +468,42 @@ body {
   overflow: hidden;
 }
 
+/* Los primeros 3 ocupan toda la fila */
+.study-card:nth-child(-n+3) {
+  grid-column: span 1;
+}
+
+/* Los últimos 2 van en la segunda fila, ocupando las columnas 2 y 3 */
+.study-card:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.study-card:nth-child(5) {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* Para pantallas medianas */
+@media (max-width: 1024px) {
+  .studies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .study-card:nth-child(n) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  .studies-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Resto de estilos igual */
 .study-card::before {
   content: '';
   position: absolute;
@@ -530,56 +539,6 @@ body {
 .study-card .period {
   color: var(--secondary);
 }
-/* ===== ARAGON SKILLS ===== */
-.award-card {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  background: var(--card-bg);
-  border-radius: 0.75rem;
-  padding: 2rem;
-  box-shadow: var(--shadow);
-  max-width: 800px;
-  margin: 0 auto;
-  transition: var(--transition);
-  border: 1px solid var(--border);
-}
-
-.award-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-.award-image {
-  flex: 1;
-}
-
-.award-image img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 0.5rem;
-  transition: var(--transition);
-}
-
-.award-card:hover .award-image img {
-  transform: scale(1.05);
-}
-
-.award-info {
-  flex: 2;
-}
-
-.award-info h4 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--text-color);
-}
-
-.award-info p {
-  color: var(--secondary);
-  margin-bottom: 1.5rem;
-}
-
 /* ===== HABILIDADES ===== */
 .skills-grid {
   display: grid;
@@ -1203,4 +1162,5 @@ body {
     font-size: 0.8rem;
   }
 }
+
 
