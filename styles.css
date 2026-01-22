@@ -439,8 +439,18 @@ body {
 
 var(--secondary);
 
-/* ===== ESTUDIOS ===== */
+#estudios {
+  padding: 4rem 0;
+}
 
+#estudios h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+/* Grid principal */
 .studies-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -452,21 +462,21 @@ var(--secondary);
 
 /* Card */
 .study-card {
+  width: 100%;
+  max-width: 340px;
   background: var(--card-bg);
   border-radius: 1rem;
   padding: 2.2rem 2rem;
   text-align: center;
   box-shadow: var(--shadow);
-  transition: transform .3s ease, box-shadow .3s ease;
   border-top: 4px solid;
   border-image: var(--gradient) 1;
   position: relative;
   overflow: hidden;
-  max-width: 340px;
-  margin: 0 auto;
+  transition: transform .3s ease, box-shadow .3s ease;
 }
 
-/* Hover sutil */
+/* Efecto brillo hover */
 .study-card::before {
   content: '';
   position: absolute;
@@ -474,7 +484,7 @@ var(--secondary);
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(255,255,255,.06),
+    rgba(255,255,255,0.06),
     transparent
   );
   transform: translateX(-100%);
@@ -507,6 +517,23 @@ var(--secondary);
 .study-card .period {
   font-size: .95rem;
   color: var(--secondary);
+  line-height: 1.4;
+}
+
+/* ==================================================
+   RESPONSIVE
+   ================================================== */
+
+@media (max-width: 1024px) {
+  .studies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .studies-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 
@@ -1134,6 +1161,7 @@ var(--secondary);
     font-size: 0.8rem;
   }
 }
+
 
 
 
