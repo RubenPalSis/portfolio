@@ -446,18 +446,21 @@ body {
   margin: 0 auto;
 }
 
-/* Los dos últimos elementos (4º y 5º) se posicionan en la segunda fila */
+/* Los dos últimos elementos (4º y 5º) se posicionan en la segunda fila CENTRADOS */
 .studies-grid .study-card:nth-child(4) {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 2;
+  margin-left: auto;
+  margin-right: 1rem;
 }
 
 .studies-grid .study-card:nth-child(5) {
-  grid-column: 3;
+  grid-column: 2;
   grid-row: 2;
+  margin-right: auto;
 }
 
-/* Para centrar los dos últimos elementos en pantallas más pequeñas */
+/* Para pantallas medianas (tablets) */
 @media (max-width: 1024px) {
   .studies-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -467,9 +470,12 @@ body {
   .studies-grid .study-card:nth-child(5) {
     grid-column: auto;
     grid-row: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
+/* Para pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
   .studies-grid {
     grid-template-columns: 1fr;
@@ -524,7 +530,6 @@ body {
 .study-card .period {
   color: var(--secondary);
 }
-
 /* ===== ARAGON SKILLS ===== */
 .award-card {
   display: flex;
@@ -1198,3 +1203,4 @@ body {
     font-size: 0.8rem;
   }
 }
+
