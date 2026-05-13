@@ -458,6 +458,7 @@ var(--secondary);
   max-width: 1100px;
   margin: 0 auto;
   justify-items: center;
+  padding: 0 1rem;
 }
 
 /* Card */
@@ -512,6 +513,7 @@ var(--secondary);
   font-size: 1.2rem;
   margin-bottom: .6rem;
   color: var(--text-color);
+  line-height: 1.3;
 }
 
 .study-card .period {
@@ -520,19 +522,323 @@ var(--secondary);
   line-height: 1.4;
 }
 
+/* Grid de cursos - 5 columnas en desktop */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.2rem;
+  max-width: 1100px;
+  margin: 2rem auto 0;
+  justify-items: center;
+  padding: 0 1rem;
+}
+
+/* Tarjeta de curso pequeña */
+.course-card {
+  width: 100%;
+  background: var(--card-bg);
+  border-radius: 0.6rem;
+  padding: 0.8rem 0.6rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border-top: 3px solid;
+  border-image: var(--gradient) 1;
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+}
+
+.course-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.06),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform .8s ease;
+}
+
+.course-card:hover::before {
+  transform: translateX(100%);
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.course-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.course-card h4 {
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+  color: var(--text-color);
+  font-weight: 600;
+  line-height: 1.2;
+  word-wrap: break-word;
+}
+
+.course-period {
+  font-size: 0.7rem;
+  color: var(--secondary);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  display: block;
+  word-wrap: break-word;
+}
+
+.diploma-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--primary-light);
+  color: var(--primary);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.diploma-link:hover {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.1);
+}
+
 /* ==================================================
-   RESPONSIVE
+   RESPONSIVE PARA CURSOS
    ================================================== */
 
+/* Tablets grandes (1024px) */
 @media (max-width: 1024px) {
   .studies-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .courses-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 0 0.8rem;
+  }
+  
+  .course-card {
+    padding: 0.7rem 0.5rem;
+    min-height: 130px;
+  }
+  
+  .course-icon {
+    font-size: 1.4rem;
+  }
+  
+  .course-card h4 {
+    font-size: 0.75rem;
+  }
+  
+  .course-period {
+    font-size: 0.65rem;
+  }
+  
+  .diploma-link {
+    width: 26px;
+    height: 26px;
   }
 }
 
+/* Tablets (768px) */
 @media (max-width: 768px) {
   .studies-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .courses-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.9rem;
+    padding: 0 0.8rem;
+    margin: 1.5rem auto 0;
+  }
+  
+  .study-card {
+    max-width: 100%;
+    padding: 1.8rem 1.5rem;
+  }
+  
+  .course-card {
+    padding: 0.7rem 0.5rem;
+    min-height: 125px;
+  }
+  
+  .course-icon {
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .course-card h4 {
+    font-size: 0.73rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .course-period {
+    font-size: 0.63rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .diploma-link {
+    width: 25px;
+    height: 25px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Móviles medianos (600px) */
+@media (max-width: 600px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    padding: 0 0.6rem;
+    margin: 1.2rem auto 0;
+  }
+  
+  .course-card {
+    padding: 0.6rem 0.5rem;
+    min-height: 120px;
+    border-radius: 0.5rem;
+  }
+  
+  .course-icon {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .course-card h4 {
+    font-size: 0.7rem;
+  }
+  
+  .course-period {
+    font-size: 0.6rem;
+  }
+  
+  .diploma-link {
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Móviles pequeños (480px) */
+@media (max-width: 480px) {
+  #estudios {
+    padding: 3rem 0;
+  }
+  
+  .studies-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 0 0.8rem;
+  }
+  
+  .study-card {
+    max-width: 100%;
+    padding: 1.5rem 1.2rem;
+    border-radius: 0.8rem;
+  }
+  
+  .study-icon {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .study-card h4 {
+    font-size: 1rem;
+  }
+  
+  .study-card .period {
+    font-size: 0.85rem;
+  }
+  
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem;
+    padding: 0 0.5rem;
+    margin: 1rem auto 0;
+  }
+  
+  .course-card {
+    padding: 0.5rem 0.4rem;
+    min-height: 115px;
+    border-top: 2px solid;
+  }
+  
+  .course-icon {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .course-card h4 {
+    font-size: 0.68rem;
+    margin-bottom: 0.2rem;
+    font-weight: 500;
+  }
+  
+  .course-period {
+    font-size: 0.58rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .diploma-link {
+    width: 22px;
+    height: 22px;
+    font-size: 0.65rem;
+  }
+}
+
+/* Móviles muy pequeños (360px) */
+@media (max-width: 360px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    padding: 0 0.4rem;
+  }
+  
+  .course-card {
+    padding: 0.5rem 0.4rem;
+    min-height: 110px;
+  }
+  
+  .course-icon {
+    font-size: 1rem;
+  }
+  
+  .course-card h4 {
+    font-size: 0.65rem;
+  }
+  
+  .course-period {
+    font-size: 0.55rem;
+  }
+  
+  .diploma-link {
+    width: 20px;
+    height: 20px;
+    font-size: 0.6rem;
   }
 }
 
@@ -726,7 +1032,7 @@ var(--secondary);
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
+  gap: 0.5rem;
   height: 100%;
 }
 
@@ -734,22 +1040,21 @@ var(--secondary);
   width: 100%;
   height: 120px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: var(--shadow);
-  border: 2px solid transparent;
+  box-shadow: none;
+  border: none;
 }
 
 .gallery-grid img:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border-color: var(--primary);
+  border-color: transparent;
 }
 
 .project-info {
   padding-top: 0.75rem;
-  border-top: 2px solid var(--border);
 }
 
 .project-info p {

@@ -134,6 +134,8 @@
   <!-- ===== ESTUDIOS ===== -->
   <section id="estudios" class="section container">
     <h3>Formación & Logros</h3>
+    
+    <!-- Estudios Principales -->
     <div class="studies-grid">
 
       <div class="study-card">
@@ -160,20 +162,53 @@
         <span class="period">Federación Aragonesa de Baloncesto <br>(2023)</span>
       </div>
 
-      <div class="study-card">
-        <div class="study-icon">
-          <i class="fas fa-print"></i>
+    </div>
+
+    <!-- Cursos y Certificaciones -->
+    <div class="courses-grid">
+
+      <div class="course-card">
+        <div class="course-icon">
+          <i class="fas fa-certificate"></i>
         </div>
-        <h4>Curso de Iniciación a la impresión 3D</h4>
-        <span class="period">Salesianos – INAEM <br>(2022)</span>
+        <h4>Iniciación a la impresión 3D</h4>
+        <span class="course-period">Salesianos – INAEM (2022)</span>
+        <a href="img/PR_Certificacion3D.pdf" class="diploma-link" title="Diploma disponible">
+          <i class="fas fa-file-pdf"></i>
+        </a>
       </div>
 
-      <div class="study-card">
-        <div class="study-icon">
-          <i class="fas fa-file-excel"></i>
+      <div class="course-card">
+        <div class="course-icon">
+          <i class="fas fa-certificate"></i>
         </div>
-        <h4>Excel Avanzado</h4>
-        <span class="period">Academia Piquer - INAEM<br>(2025)</span>
+        <h4>Excel</h4>
+        <span class="course-period">Santander | Open Academy</span>
+        <a href="img/PR_Excel.pdf" class="diploma-link" title="Diploma disponible">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+      </div>
+
+      <div class="course-card">
+        <div class="course-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <h4>Iniciación al desarrollo con IA</h4>
+        <span class="course-period">BIG school</span>
+        <a href="img/PR_DesarrolloIA.jpg" class="diploma-link" title="Diploma disponible">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+      </div>
+
+      <div class="course-card">
+        <div class="course-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <h4>Ciberseguridad y Hacking Ético</h4>
+        <span class="course-period">BIG school</span>
+        <a href="img/PR_Ciberseguridad.pdf" class="diploma-link" title="Diploma disponible">
+          <i class="fas fa-file-pdf"></i>
+        </a>
       </div>
 
     </div>
@@ -414,6 +449,35 @@
               </a>
             </div>
           </div>
+          <!-- Proyecto 3: Tapicería -->
+          <div class="project-card">
+            <div class="project-header">
+              <h4>Tapicerías Deluxe</h4>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">SEO</span>
+              </div>
+            </div>
+            <div class="project-gallery">
+              <div class="gallery-grid">
+                <img src="img/tapiceria1.webp" alt="Galería Tapicerías Deluxe 1" class="lightbox-img">
+                <img src="img/tapiceria2.webp" alt="Galería Tapicerías Deluxe 2" class="lightbox-img">
+                <img src="img/tapiceria3.webp" alt="Galería Tapicerías Deluxe 3" class="lightbox-img">
+                <img src="img/tapiceria4.webp" alt="Galería Tapicerías Deluxe 4" class="lightbox-img">
+              </div>
+            </div>
+            <div class="project-info">
+              <p>Desarrollo de página web profesional para Tapicerías Deluxe, optimizada para SEO y posicionamiento, con diseño responsive y gestión de Instagram para potenciar su visibilidad y mostrar sus servicios.</p>
+              <a href="https://tapiceriasdeluxe.com/" target="_blank" rel="noopener" class="btn">
+                <i class="fas fa-globe"></i> Visitar sitio
+              </a>
+              <a href="https://www.instagram.com/deluxetapicerias/" target="_blank" rel="noopener" class="btn">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+            </div>
+          </div>
         </div>
         <!-- Flechas de navegación -->
         <button class="carousel-btn prev-btn" aria-label="Proyecto anterior">
@@ -427,6 +491,7 @@
       <div class="carousel-indicators">
         <span class="indicator active" data-index="0" aria-label="Proyecto 1: DominicosWeb"></span>
         <span class="indicator" data-index="1" aria-label="Proyecto 2: Aplicación Android"></span>
+        <span class="indicator" data-index="2" aria-label="Proyecto 3: Tapicerías Deluxe"></span>
       </div>
     </div>
   </section>
@@ -435,7 +500,7 @@
   <div class="last-update">
     <div class="container">
       <i class="fas fa-calendar-alt"></i>
-      <span>Última actualización: 27/02/2026</span>
+      <span>Última actualización: 13/05/2026</span>
     </div>
   </div>
   
@@ -466,6 +531,18 @@
     </div>
     <p class="footer-copy">© <span id="year"></span> Rubén Palacio Sisamon</p>
   </section>
+
+  <!-- ===== LIGHTBOX MODAL ===== -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" class="modal-content" alt="Imagen en lightbox">
+    <button class="lightbox-btn prev-lightbox-btn" aria-label="Imagen anterior">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="lightbox-btn next-lightbox-btn" aria-label="Siguiente imagen">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
 
   <script src="script.js"></script>
 </body>
